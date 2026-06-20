@@ -2,8 +2,6 @@
 
 在 Windows 上同时启动服务端(Toonflow-Backend)与客户端(Toonflow-app)的完整步骤。
 
-> 注意:并行开发遗留了一个环境变量命名不一致问题——`db.ts`/`oss.ts` 读取 `BACKEND_URL`,而 `login.ts` 读取 `TOONFLOW_BACKEND_URL`。下面的脚本同时设置两个变量以规避该问题,详见文末「关于环境变量名不一致」。
-
 ---
 
 ## 前置条件
@@ -61,8 +59,7 @@ npm run dev          # 启动,监听 http://localhost:4000
 cd D:\path\to\Toonflow-app
 npm install --no-audit --no-fund --legacy-peer-deps
 
-# 关键:两个后端地址变量都设,且 JWT_SECRET 必须与服务端一致
-$env:BACKEND_URL          = "http://localhost:4000"
+# 后端地址 + JWT_SECRET(必须与服务端一致)
 $env:TOONFLOW_BACKEND_URL = "http://localhost:4000"
 $env:JWT_SECRET           = "dev-shared-secret-please-change-32chars"
 
@@ -72,7 +69,6 @@ npm run dev:gui      # 启动 Electron 桌面窗口
 ### 纯 API/无界面模式(只跑内嵌 Express,调试用)
 
 ```powershell
-$env:BACKEND_URL          = "http://localhost:4000"
 $env:TOONFLOW_BACKEND_URL = "http://localhost:4000"
 $env:JWT_SECRET           = "dev-shared-secret-please-change-32chars"
 npm run dev          # 内嵌 Express 跑在 http://localhost:10588
@@ -89,7 +85,6 @@ npm run dev          # 内嵌 Express 跑在 http://localhost:10588
 ```bat
 cd /d D:\path\to\Toonflow-app
 npm install --no-audit --no-fund --legacy-peer-deps
-set BACKEND_URL=http://localhost:4000
 set TOONFLOW_BACKEND_URL=http://localhost:4000
 set JWT_SECRET=dev-shared-secret-please-change-32chars
 npm run dev:gui
@@ -111,6 +106,6 @@ PostgreSQL 运行中
 
 ---
 
-## 关于环境变量名不一致
+## 环境变量说明
 
-`BACKEND_URL`(db/oss)与 `TOONFLOW_BACKEND_URL`(login)是并行开发遗留的命名不统一。上面脚本同时设两个可正常运行。后续建议把代码统一成单一变量名(例如都用 `TOONFLOW_BACKEND_URL`),统一后只需设一个变量。
+客户端只需一个后端地址变量 `TOONFLOW_BACKEND_URL`(db/oss/login 三处统一读取它),不设置时默认 `http://localhost:4000`。
