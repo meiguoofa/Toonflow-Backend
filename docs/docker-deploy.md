@@ -29,6 +29,10 @@
 ```bash
 cd Toonflow-Backend
 
+# 0. 准备 .env(compose 现在从 .env 读取 PG_*/JWT/TOS,缺它无法启动)
+cp .env.production.example .env
+# 编辑 .env,至少填 PG_PASSWORD 与 JWT_SECRET
+
 # 1. 构建并后台启动 postgres + backend(backend 启动时自动跑 migration 建表)
 docker compose up -d --build
 
@@ -41,8 +45,10 @@ curl http://localhost:4000/healthz       # 期望 200
 
 启动后:
 - 后端:`http://localhost:4000`
-- PostgreSQL:`localhost:5432`(账号 `toonflow` / `toonflow_pwd` / 库 `toonflow`)
+- PostgreSQL:仅 docker 内部网络可达(不再对外暴露 5432);账号/库名按 `.env` 中的 `PG_USER`/`PG_DATABASE`
 - 默认登录账号:**admin / admin123**
+
+> 部署到生产 Linux 云服务器请直接看 `docs/linux-deploy.md`(用 `./deploy.sh` 一键部署)。
 
 ---
 
@@ -54,11 +60,11 @@ PowerShell:
 ```powershell
 cd D:\path\to\Toonflow-app
 $env:TOONFLOW_BACKEND_URL = "http://localhost:4000"
-$env:JWT_SECRET           = "dev-shared-secret-please-change-32chars"  # 与 compose 一致
+$env:JWT_SECRET           = "你的强随机密钥"  # 必须与 .env 中的 JWT_SECRET 一致
 npm run dev:gui
 ```
 
-> `JWT_SECRET` 必须与 `docker-compose.yml` 里的值完全一致,否则客户端验签会拒绝 token。
+> `JWT_SECRET` 必须与 `.env` 里的值完全一致,否则客户端验签会拒绝 token。
 
 ---
 
@@ -81,9 +87,14 @@ docker compose exec postgres psql -U toonflow -d toonflow   # 进 psql
 
 ## 五、配置真实 TOS / 自定义密钥
 
-`docker-compose.yml` 的环境变量支持从宿主机 `.env` 或 shell 注入。在 `Toonflow-Backend/` 放一个 `.env`(compose 会自动读取):
+所有环境变量(`PG_*` / `JWT_SECRET` / `TOS_*`)都从 `Toonflow-Backend/.env` 读取(compose 自动加载)。从模板复制后编辑:
+
+```bash
+cp .env.production.example .env
+```
 
 ```env
+PG_PASSWORD=你的数据库密码
 JWT_SECRET=你的强随机密钥
 TOS_ACCESS_KEY_ID=你的火山引擎AK
 TOS_SECRET_ACCESS_KEY=你的火山引擎SK
