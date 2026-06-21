@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: toonflow
+      POSTGRES_PASSWORD: toonflow_pwd
+      POSTGRES_DB: toonflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U toonflow -d toonflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_USER: toonflow
+      PG_PASSWORD: toonflow_pwd
+      PG_DATABASE: toonflow
+      PORT: 4000
+      # JWT_SECRET 必须与桌面端一致;不传则用占位值(生产务必覆盖)
+      JWT_SECRET: ${JWT_SECRET:-dev-shared-secret-please-change-32chars}
+      # 火山引擎 TOS(媒体上传需要真实凭据,仅验证登录/数据流程可留空)
+      TOS_ACCESS_KEY_ID: ${TOS_ACCESS_KEY_ID:-}
+      TOS_SECRET_ACCESS_KEY: ${TOS_SECRET_ACCESS_KEY:-}
+      TOS_ENDPOINT: ${TOS_ENDPOINT:-tos-cn-shanghai.volces.com}
+      TOS_REGION: ${TOS_REGION:-cn-shanghai}
+      TOS_BUCKET: ${TOS_BUCKET:-toonflow-service}
+    ports:
+      - "4000:4000"
+
+volumes:
+  pgdata:
