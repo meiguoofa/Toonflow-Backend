@@ -68,6 +68,27 @@ const TERMINAL_METHODS = new Set<string>([
   "select", // select 既可中间也可终结
 ]);
 
+// ---- 自增 id 表 ----------------------------------------------------------
+// bigInteger id 主键表：PG 没有 SQLite 的 rowid 自增，insert 缺 id 时由应用层生成。
+// （text id 表 o_vendorConfig/o_skillList/memories 由调用方提供 id；
+//  复合主键表 o_setting/o_scriptAssets/o_assets2Storyboard/o_skillAttribution/
+//  o_assetsRole2Audio 没有 id 列，不注入。）
+const AUTO_ID_TABLES = new Set<string>([
+  "o_user", "o_project", "o_artStyle", "o_agentDeploy", "o_tasks", "o_prompt",
+  "o_modelPrompt", "o_novel", "o_event", "o_eventChapter", "o_script", "o_image",
+  "o_assets", "o_storyboard", "o_agentWorkData", "o_video", "o_videoTrack", "o_imageFlow",
+]);
+
+// 应用层 id 生成器：进程内单调递增、唯一，且 < Number.MAX_SAFE_INTEGER。
+// 基于毫秒时间戳，同毫秒并发时退化为 +1 自增。注：多后端实例并发下应改用 PG 序列。
+let _lastGenId = 0;
+function nextId(): number {
+  let id = Date.now();
+  if (id <= _lastGenId) id = _lastGenId + 1;
+  _lastGenId = id;
+  return id;
+}
+
 // ---- 错误响应工具 --------------------------------------------------------
 function fail(res: Response, code: number, message: string) {
   return res.status(200).json({ code, message, data: null });
@@ -164,29 +185,28 @@ router.post("/query", requireAuth, async (req: Request, res: Response) => {
   try {
     let qb: any = knex(table);
 
-    // 5.1 业务表多租户注入
-    //   - INSERT：把 args[0]（对象/数组）中无 userId 的对象自动补 userId
-    //   - 其它（SELECT/UPDATE/DELETE）：链前先 .where('userId', req.user.id)
+    // 5.1 INSERT：业务表补 userId；bigint-id 主键表补缺失的 id（PG 无 rowid 自增），
+    //     并收集 id 回传，兼容前端 const [id] = await db(t).insert(...)。
+    //     其它（SELECT/UPDATE/DELETE）：业务表链前 .where('table.userId', userId)。
     let terminalArgs = term.args;
-    if (isBusiness) {
-      if (term.method === "insert") {
-        const raw = term.args[0];
-        const fillUserId = (row: any) => {
-          if (row && typeof row === "object" && !Array.isArray(row)) {
-            if (row.userId == null) return { ...row, userId };
-          }
-          return row;
-        };
-        let patched: any;
-        if (Array.isArray(raw)) {
-          patched = raw.map(fillUserId);
-        } else {
-          patched = fillUserId(raw);
-        }
-        terminalArgs = [patched, ...term.args.slice(1)];
-      } else if (term.method !== "truncate") {
-        qb = qb.where("userId", userId);
-      }
+    let insertedIds: any[] | null = null;
+    if (term.method === "insert") {
+      const raw = term.args[0];
+      const list = Array.isArray(raw) ? raw : [raw];
+      const ids: any[] = [];
+      const patched = list.map((row: any) => {
+        if (!row || typeof row !== "object" || Array.isArray(row)) return row;
+        const r = { ...row };
+        if (isBusiness && r.userId == null) r.userId = userId;
+        if (AUTO_ID_TABLES.has(table) && r.id == null) r.id = nextId();
+        if (r.id !== undefined) ids.push(r.id);
+        return r;
+      });
+      insertedIds = ids;
+      terminalArgs = [Array.isArray(raw) ? patched : patched[0], ...term.args.slice(1)];
+    } else if (isBusiness && term.method !== "truncate") {
+      // 限定 base 表名，避免 join 多表都含 userId 时报 column "userId" is ambiguous
+      qb = qb.where(`${table}.userId`, userId);
     }
 
     // 5.2 回放中间方法
@@ -205,7 +225,10 @@ router.post("/query", requireAuth, async (req: Request, res: Response) => {
     }
     const result = await termFn.apply(qb, terminalArgs);
 
-    return res.status(200).json({ code: 0, message: "ok", data: result ?? null });
+    // INSERT 返回应用层生成/提供的 id 数组（PG insert 不 returning 时返回 []），
+    // 兼容前端大量 `const [id] = await db(t).insert(...)` 取新 id 做关联的写法。
+    const data = term.method === "insert" ? (insertedIds ?? []) : (result ?? null);
+    return res.status(200).json({ code: 0, message: "ok", data });
   } catch (e: any) {
     return fail(res, 5000, e?.message || "internal pg error");
   }
