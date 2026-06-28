@@ -1,0 +1,2122 @@
+{
+  "atlascloud": [
+    {
+      "name": "DeepSeek V4 Pro",
+      "modelName": "deepseek-ai/deepseek-v4-pro",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "DeepSeek V4 Flash",
+      "modelName": "deepseek-ai/deepseek-v4-flash",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Kimi K2.6",
+      "modelName": "moonshotai/kimi-k2.6",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GLM 5.1",
+      "modelName": "zai-org/glm-5.1",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "MiniMax M2.7",
+      "modelName": "minimaxai/minimax-m2.7",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GPT Image 2",
+      "modelName": "openai/gpt-image-2/text-to-image",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage"
+      ]
+    },
+    {
+      "name": "Nano Banana Pro",
+      "modelName": "google/nano-banana-pro/text-to-image",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Nano Banana 2",
+      "modelName": "google/nano-banana-2/text-to-image",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Seedream v5",
+      "modelName": "bytedance/seedream-v5.0-lite/sequential",
+      "type": "image",
+      "mode": [
+        "text"
+      ]
+    },
+    {
+      "name": "Qwen Image 2 Pro",
+      "modelName": "qwen/qwen-image-2.0-pro/text-to-image",
+      "type": "image",
+      "mode": [
+        "text"
+      ]
+    },
+    {
+      "name": "Seedance 2.0 Audio-Visual",
+      "modelName": "bytedance/seedance-2.0/text-to-video",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance 2.0 Reference-to-Video",
+      "modelName": "bytedance/seedance-2.0/reference-to-video",
+      "type": "video",
+      "mode": [
+        "singleImage"
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance 2.0 Multi-Image-to-Video",
+      "modelName": "bytedance/seedance-2.0/image-to-video",
+      "type": "video",
+      "mode": [
+        "startFrameOptional",
+        [
+          "imageReference:4"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance 2.0 Fast Audio-Visual",
+      "modelName": "bytedance/seedance-2.0-fast/text-to-video",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance 2.0 Fast Reference-to-Video",
+      "modelName": "bytedance/seedance-2.0-fast/reference-to-video",
+      "type": "video",
+      "mode": [
+        "singleImage"
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wan-2.7 Reference-to-video",
+      "modelName": "alibaba/wan-2.7/reference-to-video",
+      "type": "video",
+      "mode": [
+        "singleImage"
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "resolution": [
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    }
+  ],
+  "deepseek": [
+    {
+      "name": "DeepSeek V4 Pro",
+      "modelName": "deepseek-v4-pro",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "DeepSeek V4 Flash",
+      "modelName": "deepseek-v4-flash",
+      "type": "text",
+      "think": true
+    }
+  ],
+  "grsai": [
+    {
+      "name": "GPT Image 2",
+      "modelName": "gpt-image-2",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Nano Banana Fast",
+      "modelName": "nano-banana-fast",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Nano Banana 2",
+      "modelName": "nano-banana-2",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Nano Banana Pro",
+      "modelName": "nano-banana-pro",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    }
+  ],
+  "klingai": [
+    {
+      "name": "kling-video-o1 标准",
+      "modelName": "kling-video-o1:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired",
+        [
+          "imageReference:7",
+          "videoReference:1"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-video-o1 专家",
+      "modelName": "kling-video-o1:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired",
+        [
+          "imageReference:7",
+          "videoReference:1"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v3-omni 标准",
+      "modelName": "kling-v3-omni:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired",
+        [
+          "imageReference:7",
+          "videoReference:1"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v3-omni 专家",
+      "modelName": "kling-v3-omni:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired",
+        [
+          "imageReference:7",
+          "videoReference:1"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v3 标准",
+      "modelName": "kling-v3:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v3 专家",
+      "modelName": "kling-v3:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-6 标准",
+      "modelName": "kling-v2-6:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-6 专家",
+      "modelName": "kling-v2-6:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-5-turbo 标准",
+      "modelName": "kling-v2-5-turbo:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-5-turbo 专家",
+      "modelName": "kling-v2-5-turbo:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-1 标准",
+      "modelName": "kling-v2-1:std",
+      "type": "video",
+      "mode": [
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-1 专家",
+      "modelName": "kling-v2-1:pro",
+      "type": "video",
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2-1 Master",
+      "modelName": "kling-v2-1-master:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v2 Master",
+      "modelName": "kling-v2-master:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v1-6 标准",
+      "modelName": "kling-v1-6:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        [
+          "imageReference:4"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v1-6 专家",
+      "modelName": "kling-v1-6:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "endFrameOptional",
+        [
+          "imageReference:4"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v1-5 标准",
+      "modelName": "kling-v1-5:std",
+      "type": "video",
+      "mode": [
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v1-5 专家",
+      "modelName": "kling-v1-5:pro",
+      "type": "video",
+      "mode": [
+        "singleImage",
+        "endFrameOptional"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v1 标准",
+      "modelName": "kling-v1:std",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "kling-v1 专家",
+      "modelName": "kling-v1:pro",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10
+          ],
+          "resolution": [
+            "720p"
+          ]
+        }
+      ]
+    }
+  ],
+  "minimax": [
+    {
+      "name": "MiniMax-M2.7 (推理版)",
+      "modelName": "MiniMax-M2.7",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "MiniMax-M2.7 极速版 (推理版)",
+      "modelName": "MiniMax-M2.7-highspeed",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "MiniMax-M2.5 (推理版)",
+      "modelName": "MiniMax-M2.5",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "MiniMax-M2.5 极速版 (推理版)",
+      "modelName": "MiniMax-M2.5-highspeed",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "MiniMax-M2.1 (编程版)",
+      "modelName": "MiniMax-M2.1",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "MiniMax-M2.1 极速版 (编程版)",
+      "modelName": "MiniMax-M2.1-highspeed",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "MiniMax-M2 (Agent版)",
+      "modelName": "MiniMax-M2",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "海螺图像V1",
+      "modelName": "image-01",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage"
+      ]
+    },
+    {
+      "name": "海螺图像V1 Live版",
+      "modelName": "image-01-live",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "associationSkills": "支持自定义画风"
+    },
+    {
+      "name": "海螺2.3",
+      "modelName": "MiniMax-Hailuo-2.3",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            6
+          ],
+          "resolution": [
+            "768P",
+            "1080P"
+          ]
+        },
+        {
+          "duration": [
+            10
+          ],
+          "resolution": [
+            "768P"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "海螺2.3极速版",
+      "modelName": "MiniMax-Hailuo-2.3-Fast",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            6
+          ],
+          "resolution": [
+            "768P",
+            "1080P"
+          ]
+        },
+        {
+          "duration": [
+            10
+          ],
+          "resolution": [
+            "768P"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "海螺02",
+      "modelName": "MiniMax-Hailuo-02",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            6
+          ],
+          "resolution": [
+            "512P",
+            "768P",
+            "1080P"
+          ]
+        },
+        {
+          "duration": [
+            10
+          ],
+          "resolution": [
+            "512P",
+            "768P"
+          ]
+        }
+      ]
+    }
+  ],
+  "null": [
+    {
+      "name": "GPT-4o",
+      "modelName": "gpt-4o",
+      "type": "text",
+      "think": false
+    }
+  ],
+  "openai": [
+    {
+      "name": "GPT-4o",
+      "modelName": "gpt-4o",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GPT-4.1",
+      "modelName": "gpt-4.1",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GPT-5.1",
+      "modelName": "gpt-5.1",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GPT-5.2",
+      "modelName": "gpt-5.2",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GPT-5.4",
+      "modelName": "gpt-5.4",
+      "type": "text",
+      "think": false
+    }
+  ],
+  "toonflow": [
+    {
+      "name": "Seedance-2.0 (支持真人)",
+      "modelName": "Seedance 2.0",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance 2.0 fast (支持真人)",
+      "modelName": "Seedance 2.0 fast",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wan2.6",
+      "type": "video",
+      "modelName": "wan2.6",
+      "mode": [
+        "singleImage"
+      ],
+      "durationResolutionMap": [
+        {
+          "duration": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "audio": true
+    },
+    {
+      "name": "Seedance 1.5 Pro",
+      "type": "video",
+      "modelName": "doubao-seedance-1-5-pro",
+      "mode": [
+        "text",
+        "endFrameOptional"
+      ],
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ3 pro",
+      "type": "video",
+      "modelName": "ViduQ3-pro",
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "durationResolutionMap": [
+        {
+          "duration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "resolution": [
+            "540p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "audio": false
+    },
+    {
+      "name": "Kling-Video-O1",
+      "modelName": "Kling-Video-O1",
+      "type": "video",
+      "mode": [
+        "startFrameOptional",
+        [
+          "imageReference:7",
+          "videoReference:1"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10,
+            15
+          ],
+          "resolution": [
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kling-V3-Omni",
+      "modelName": "Kling-V3-Omni",
+      "type": "video",
+      "mode": [
+        "startFrameOptional",
+        [
+          "imageReference:7",
+          "videoReference:1"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5,
+            10,
+            15
+          ],
+          "resolution": [
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Doubao Seedream 5.0 Lite",
+      "type": "image",
+      "modelName": "doubao-seedream-5.0-Lite",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Doubao Seedream 4.5",
+      "type": "image",
+      "modelName": "doubao-seedream-4-5",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "全能图片G-2.0",
+      "type": "image",
+      "modelName": "全能图片G-2.0",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    }
+  ],
+  "vidu": [
+    {
+      "name": "ViduQ3 turbo",
+      "type": "video",
+      "modelName": "ViduQ3-turbo",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "resolution": [
+            "540p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired",
+        "text"
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ3 pro",
+      "type": "video",
+      "modelName": "ViduQ3-pro",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "resolution": [
+            "540p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired",
+        "text"
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ2 pro fast",
+      "type": "video",
+      "modelName": "ViduQ2-pro-fast",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "resolution": [
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": true
+    },
+    {
+      "name": "viduQ2 turbo",
+      "type": "video",
+      "modelName": "ViduQ2-turbo",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "resolution": [
+            "540p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ2 pro",
+      "type": "video",
+      "modelName": "ViduQ2-pro",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "resolution": [
+            "540p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ2",
+      "type": "video",
+      "modelName": "ViduQ2",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "text"
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ1",
+      "type": "video",
+      "modelName": "ViduQ1",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired",
+        "text"
+      ],
+      "audio": true
+    },
+    {
+      "name": "ViduQ1 classic",
+      "type": "video",
+      "modelName": "viduQ1-classic",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            5
+          ],
+          "resolution": [
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": true
+    },
+    {
+      "name": "Vidu2.0",
+      "type": "video",
+      "modelName": "vidu2.0",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            8
+          ],
+          "resolution": [
+            "360p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ],
+      "mode": [
+        "singleImage",
+        "startEndRequired"
+      ],
+      "audio": true
+    },
+    {
+      "name": "viduq1 for image",
+      "type": "image",
+      "modelName": "viduq1",
+      "mode": [
+        "text"
+      ]
+    },
+    {
+      "name": "viduq2 for image",
+      "type": "image",
+      "modelName": "viduq2",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    }
+  ],
+  "volcengine": [
+    {
+      "name": "Doubao-Seed-2.0-Pro",
+      "modelName": "doubao-seed-2-0-pro-260215",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-2.0-Lite",
+      "modelName": "doubao-seed-2-0-lite-260215",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-2.0-Mini",
+      "modelName": "doubao-seed-2-0-mini-260215",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-2.0-Code-Preview",
+      "modelName": "doubao-seed-2-0-code-preview-260215",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-Character",
+      "modelName": "doubao-seed-character-251128",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Doubao-Seed-1.8",
+      "modelName": "doubao-seed-1-8-251228",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-Code-Preview",
+      "modelName": "doubao-seed-code-preview-251028",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-1.6-Lite",
+      "modelName": "doubao-seed-1-6-lite-251015",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-1.6-Flash(0828)",
+      "modelName": "doubao-seed-1-6-flash-250828",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-1.6-Vision",
+      "modelName": "doubao-seed-1-6-vision-250815",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-1.6(1015)",
+      "modelName": "doubao-seed-1-6-251015",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-1.6(0615)",
+      "modelName": "doubao-seed-1-6-250615",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-1.6-Flash(0615)",
+      "modelName": "doubao-seed-1-6-flash-250615",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Doubao-Seed-Translation",
+      "modelName": "doubao-seed-translation-250915",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Doubao-1.5-Pro-32K",
+      "modelName": "doubao-1-5-pro-32k-250115",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Doubao-1.5-Pro-32K-Character(0715)",
+      "modelName": "doubao-1-5-pro-32k-character-250715",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Doubao-1.5-Pro-32K-Character(0228)",
+      "modelName": "doubao-1-5-pro-32k-character-250228",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Doubao-1.5-Lite-32K",
+      "modelName": "doubao-1-5-lite-32k-250115",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Doubao-1.5-Vision-Pro-32K",
+      "modelName": "doubao-1-5-vision-pro-32k-250115",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GLM-4-7",
+      "modelName": "glm-4-7-251222",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "DeepSeek-V3-2",
+      "modelName": "deepseek-v3-2-251201",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "DeepSeek-V3-1-Terminus",
+      "modelName": "deepseek-v3-1-terminus",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "DeepSeek-V3(0324)",
+      "modelName": "deepseek-v3-250324",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "DeepSeek-R1(0528)",
+      "modelName": "deepseek-r1-250528",
+      "type": "text",
+      "think": true
+    },
+    {
+      "name": "Qwen3-32B",
+      "modelName": "qwen3-32b-20250429",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Qwen3-14B",
+      "modelName": "qwen3-14b-20250429",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Qwen3-8B",
+      "modelName": "qwen3-8b-20250429",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Qwen3-0.6B",
+      "modelName": "qwen3-0-6b-20250429",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Qwen2.5-72B",
+      "modelName": "qwen2-5-72b-20240919",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "GLM-4.5-Air",
+      "modelName": "glm-4-5-air",
+      "type": "text",
+      "think": false
+    },
+    {
+      "name": "Seedream-5.0",
+      "modelName": "doubao-seedream-5-0-260128",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Seedream-5.0-Lite",
+      "modelName": "doubao-seedream-5-0-lite-260128",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Seedream-4.5",
+      "modelName": "doubao-seedream-4-5-251128",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Seedream-4.0",
+      "modelName": "doubao-seedream-4-0-250828",
+      "type": "image",
+      "mode": [
+        "text",
+        "singleImage",
+        "multiReference"
+      ]
+    },
+    {
+      "name": "Seedream-3.0-T2I",
+      "modelName": "doubao-seedream-3-0-t2i-250415",
+      "type": "image",
+      "mode": [
+        "text"
+      ]
+    },
+    {
+      "name": "Seedance-2.0(音画同生)",
+      "modelName": "doubao-seedance-2-0-260128",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-2.0-Fast(音画同生)",
+      "modelName": "doubao-seedance-2-0-fast-260128",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-1.5-Pro(音画同生)",
+      "modelName": "doubao-seedance-1-5-pro-251215",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional"
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-1.0-Pro",
+      "modelName": "doubao-seedance-1-0-pro-250528",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-1.0-Pro-Fast",
+      "modelName": "doubao-seedance-1-0-pro-fast-251015",
+      "type": "video",
+      "mode": [
+        "text",
+        "singleImage"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-1.0-Lite-T2V",
+      "modelName": "doubao-seedance-1-0-lite-t2v-250428",
+      "type": "video",
+      "mode": [
+        "text"
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-1.0-Lite-I2V",
+      "modelName": "doubao-seedance-1-0-lite-i2v-250428",
+      "type": "video",
+      "mode": [
+        "startFrameOptional",
+        [
+          "imageReference:4"
+        ]
+      ],
+      "audio": false,
+      "durationResolutionMap": [
+        {
+          "duration": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    }
+  ],
+  "volcengineSd2": [
+    {
+      "name": "Seedance-2.0(音画同生)",
+      "modelName": "doubao-seedance-2-0-260128",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-2.0-Fast(音画同生)",
+      "modelName": "doubao-seedance-2-0-fast-260128",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional",
+        [
+          "imageReference:9",
+          "videoReference:3",
+          "audioReference:3"
+        ]
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "resolution": [
+            "480p",
+            "720p"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seedance-1.5-Pro(音画同生)",
+      "modelName": "doubao-seedance-1-5-pro-251215",
+      "type": "video",
+      "mode": [
+        "text",
+        "startFrameOptional"
+      ],
+      "audio": "optional",
+      "durationResolutionMap": [
+        {
+          "duration": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "resolution": [
+            "480p",
+            "720p",
+            "1080p"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "atlascloud": {
+    "id": "atlascloud",
+    "name": "AtlasCloud MASS",
+    "description": "AtlasCloud 全模态平台接入 Toonflow。默认按官方文档填写文本、图片、视频与任务轮询路径。",
+    "author": "AtlasCloud",
+    "version": "1.0",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true,
+        "placeholder": "AtlasCloud API Key"
+      },
+      {
+        "key": "chatBaseUrl",
+        "label": "文本基地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "https://api.atlascloud.ai/v1",
+        "disabled": true
+      },
+      {
+        "key": "mediaBaseUrl",
+        "label": "媒体基地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "https://api.atlascloud.ai/api/v1",
+        "disabled": true
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "chatBaseUrl": "https://api.atlascloud.ai/v1",
+      "mediaBaseUrl": "https://api.atlascloud.ai/api/v1"
+    },
+    "template": "atlascloud",
+    "protocol": "openai-compatible"
+  },
+  "deepseek": {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "description": "DeepSeek 官方接口适配，支持 V4 系列模型与思考模式（思维链输出）。\n\n[前往平台](https://platform.deepseek.com/)",
+    "author": "Toonflow",
+    "version": "2.1",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "示例：https://api.deepseek.com"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://api.deepseek.com/v1"
+    },
+    "template": "deepseek",
+    "protocol": "openai-compatible"
+  },
+  "grsai": {
+    "id": "grsai",
+    "name": "Grsai",
+    "description": "Grsai AI平台适配，支持文生图、图生图、文生视频、Gemini兼容文本模型 \n [前往中转平台](https://tf.grsai.ai/zh)",
+    "author": "Toonflow",
+    "version": "2.2",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "示例：https://grsai.dakka.com.cn"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://grsai.dakka.com.cn"
+    },
+    "template": "grsai",
+    "protocol": "google"
+  },
+  "klingai": {
+    "id": "klingai",
+    "name": "可灵AI",
+    "description": "可灵AI视频生成\n\n支持可灵全系列视频模型，包括 kling-video-o1、kling-v3-omni、kling-v3、kling-v2-6、kling-v2-5-turbo、kling-v2-1、kling-v2-master、kling-v1-6、kling-v1-5、kling-v1 等。\n\n需要在[可灵AI开放平台](https://klingai.com)\n\n获取 Access Key 和 Secret Key。",
+    "author": "Toonflow",
+    "version": "2.0",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "accessKey",
+        "label": "Access Key",
+        "type": "password",
+        "required": true,
+        "placeholder": "请输入可灵AI的Access Key"
+      },
+      {
+        "key": "secretKey",
+        "label": "Secret Key",
+        "type": "password",
+        "required": true,
+        "placeholder": "请输入可灵AI的Secret Key"
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "默认：https://api-beijing.klingai.com"
+      }
+    ],
+    "defaultInputValues": {
+      "accessKey": "",
+      "secretKey": "",
+      "baseUrl": "https://api-beijing.klingai.com"
+    },
+    "template": "klingai",
+    "protocol": null
+  },
+  "minimax": {
+    "id": "minimax",
+    "name": "MiniMax(海螺AI)",
+    "description": "MiniMax官方接口适配，支持M系列推理文本模型、文生图/图生图、视频生成（文生视频、图生视频、首尾帧生成）能力 \n [前往平台](https://minimaxi.com/)",
+    "author": "Toonflow",
+    "version": "2.1",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "示例：https://api.minimaxi.com"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://api.minimaxi.com"
+    },
+    "template": "minimax",
+    "protocol": "openai-compatible"
+  },
+  "null": {
+    "id": "null",
+    "name": "空模板",
+    "description": "## 开发模板，您可以使用此模板进行Vibe Coding",
+    "author": "Toonflow",
+    "version": "2.0",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "示例：https://api.openai.com/v1"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://api.openai.com/v1"
+    },
+    "template": "null",
+    "protocol": null
+  },
+  "openai": {
+    "id": "openai",
+    "name": "OpenAI标准接口",
+    "description": "OpenAI标准格式接口，可修改请求地址并手动添加模型。",
+    "author": "Toonflow",
+    "version": "2.0",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "以v1结束，示例：https://api.openai.com/v1"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://api.openai.com/v1"
+    },
+    "template": "openai",
+    "protocol": "openai-compatible"
+  },
+  "toonflow": {
+    "id": "toonflow",
+    "name": "Toonflow官方中转平台",
+    "description": "## Toonflow官方中转平台\n\nToonflow官方中转平台，提供**文本、图像、视频、音频**等多模态生成能力的中转服务，支持接入多个大模型供应商，方便用户统一管理和调用不同供应商的生成能力。\n\n🔗 [前往中转平台](https://api.toonflow.net/)\n\n如果这个项目对你有帮助，可以考虑支持一下我们的开发工作 ☕",
+    "author": "Toonflow",
+    "version": "3.2",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://api.toonflow.net/v1"
+    },
+    "template": "toonflow",
+    "protocol": "openai-compatible"
+  },
+  "vidu": {
+    "id": "vidu",
+    "name": "Vidu 开放平台",
+    "description": "Vidu 官方视频生成平台。 [前往平台](https://platform.vidu.cn/login/)",
+    "author": "搬砖的Coder",
+    "version": "1.0",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true,
+        "placeholder": "请到Vidu官方申请"
+      },
+      {
+        "key": "baseUrl",
+        "label": "接口路径",
+        "type": "url",
+        "required": true,
+        "placeholder": "https://api.vidu.cn/ent/v2"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://api.vidu.cn/ent/v2"
+    },
+    "template": "vidu",
+    "protocol": null
+  },
+  "volcengine": {
+    "id": "volcengine",
+    "name": "火山引擎(豆包)",
+    "description": "火山引擎豆包大模型，支持文本、图片生成、视频生成等能力。\n\n需要在[火山引擎控制台](https://console.volcengine.com/ark)获取API密钥。",
+    "author": "leeqi",
+    "version": "2.4",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true,
+        "placeholder": "火山引擎API Key"
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "以v3结束，示例：https://ark.cn-beijing.volces.com/api/v3"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/v3"
+    },
+    "template": "volcengine",
+    "protocol": "openai-compatible"
+  },
+  "volcengineSd2": {
+    "id": "volcengineSd2",
+    "name": "火山引擎sd2.0真人",
+    "description": "火山引擎豆包大模型，支持文本、图片生成、视频生成等能力。\n\n需要在[火山引擎控制台](https://console.volcengine.com/ark)获取API密钥。",
+    "author": "toonflow",
+    "version": "2.0",
+    "icon": "",
+    "inputs": [
+      {
+        "key": "apiKey",
+        "label": "API密钥",
+        "type": "password",
+        "required": true,
+        "placeholder": "火山引擎API Key"
+      },
+      {
+        "key": "baseUrl",
+        "label": "请求地址",
+        "type": "url",
+        "required": true,
+        "placeholder": "以v3结束，示例：https://ark.cn-beijing.volces.com/api/v3"
+      },
+      {
+        "key": "ak",
+        "label": "火山 Access Key ID",
+        "type": "text",
+        "required": true,
+        "placeholder": "火山引擎/OSS API访问密钥"
+      },
+      {
+        "key": "sk",
+        "label": "火山 Secret Access Key",
+        "type": "password",
+        "required": true,
+        "placeholder": "火山引擎/OSS Secret Access Key"
+      },
+      {
+        "key": "groupId",
+        "label": "资产组ID",
+        "type": "text",
+        "required": true,
+        "placeholder": "火山引擎资产组ID"
+      },
+      {
+        "key": "tosEndpoint",
+        "label": "火山TOS Endpoint",
+        "type": "url",
+        "required": true,
+        "placeholder": "如 tos-cn-beijing.volces.com"
+      },
+      {
+        "key": "tosBucket",
+        "label": "火山TOS Bucket",
+        "type": "text",
+        "required": true,
+        "placeholder": "Bucket 名称"
+      }
+    ],
+    "defaultInputValues": {
+      "apiKey": "",
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+      "ak": "",
+      "sk": "",
+      "groupId": "",
+      "tosEndpoint": "",
+      "tosBucket": ""
+    },
+    "template": "volcengineSd2",
+    "protocol": null
+  }
+}

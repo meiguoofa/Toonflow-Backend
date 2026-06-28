@@ -181,6 +181,19 @@ export function installGlobals(): void {
   g.logger = logger;
   g.axios = axios;
   g.jsonwebtoken = jsonwebtoken;
-  g.crypto = nodeCrypto;
+  // Node 19+ 把 globalThis.crypto 定为只读 getter（Web Crypto API），普通赋值会抛
+  // "Cannot set property crypto ... has only a getter"。但 vendor 代码用的是 Node crypto
+  // 的 createHmac / createHash（Web Crypto 没有这些），所以必须用 defineProperty 强制
+  // 把它替换成 Node crypto 模块。Web Crypto 的描述符是 configurable: true，可覆盖。
+  try {
+    Object.defineProperty(g, "crypto", {
+      value: nodeCrypto,
+      writable: true,
+      configurable: true,
+    });
+  } catch {
+    // 极少数环境 globalThis.crypto 不可重定义。用到 createHmac 的 vendor（volcengineSd2 等）
+    // 会在运行时报错；其它不用 crypto 的 vendor 不受影响。
+  }
   g.__aiHelpersInstalled = true;
 }
