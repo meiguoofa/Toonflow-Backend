@@ -6,6 +6,7 @@ import cors from "cors";
 import authRouter from "./routes/auth";
 import dbRouter from "./routes/db";
 import tosRouter from "./routes/tos";
+import aiRouter from "./routes/ai";
 import { requireAuth } from "./auth/middleware";
 
 const app = express();
@@ -25,6 +26,9 @@ app.use("/api/auth", authRouter);
 // 这里全局已经做了校验，重复验签虽然不出错但属于死代码。
 app.use("/api/db", requireAuth, dbRouter);
 app.use("/api/tos", requireAuth, tosRouter);
+// /api/ai/* 调外部图片/视频/音频生成，全部要求 token；body 可能含大 base64，已在上面 express.json
+// limit 设置为 10mb。
+app.use("/api/ai", requireAuth, aiRouter);
 
 const port = Number(process.env.PORT || 4000);
 app.listen(port, () => {
